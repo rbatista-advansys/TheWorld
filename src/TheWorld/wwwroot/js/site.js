@@ -1,14 +1,15 @@
 /* site.js*/
+(function () {
+    var ele = document.getElementById("username");
+    ele.innerHTML = "Ricardo Batista";
 
-var ele = document.getElementById("username");
-ele.innerHTML = "Ricardo Batista";
+    var main = document.getElementById("main");
 
-var main = document.getElementById("main");
+    main.onmouseenter = function () {
+        main.style["background-color"] = "#888";
+    };
 
-main.onmouseenter = function () {
-    main.style["background-color"] = "#888";
-};
-
-main.onmouseleave = function () {
-    main.style["background-color"] = "";
-};
+    main.onmouseleave = function () {
+        main.style["background-color"] = "";
+    };
+})();
