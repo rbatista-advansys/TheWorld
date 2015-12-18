@@ -1,15 +1,21 @@
 /* site.js*/
 (function () {
-    var ele = document.getElementById("username");
-    ele.innerHTML = "Ricardo Batista";
+    var ele = $("#username");
+    ele.text("Ricardo Batista");
 
-    var main = document.getElementById("main");
+    var main = $("#main");
 
-    main.onmouseenter = function () {
+    main.on("mouseenter", function () {
         main.style["background-color"] = "#888";
-    };
+    });
 
-    main.onmouseleave = function () {
+    main.on("mouseleave", function () {
         main.style["background-color"] = "";
-    };
+    });
+
+    var menuItems = $("ul.menu li a");
+    menuItems.on("click", function () {
+        var me = $(this);
+        alert(me.text());
+    });
 })();
