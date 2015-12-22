@@ -15,7 +15,7 @@ namespace TheWorld
 {
     public class Startup
     {
-        public static IConfigurationRoot Configuraiton;
+        public static IConfigurationRoot Configuration;
 
         public Startup(IApplicationEnvironment appEnv)
         {
@@ -24,7 +24,7 @@ namespace TheWorld
                 .AddJsonFile("config.json")
                 .AddEnvironmentVariables();
 
-            Configuraiton = builder.Build();
+            Configuration = builder.Build();
         }
         
         // This method gets called by the runtime. Use this method to add services to the container.

@@ -40,7 +40,7 @@ namespace TheWorld.Controllers.Web
         {
             if (ModelState.IsValid)
             {
-                var email = Startup.Configuraiton["AppSettings:SiteEmailAddress"];
+                var email = Startup.Configuration["AppSettings:SiteEmailAddress"];
 
                 if (string.IsNullOrWhiteSpace(email))
                 {
