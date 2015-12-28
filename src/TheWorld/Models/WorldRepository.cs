@@ -17,6 +17,10 @@ namespace TheWorld.Models
             _logger = logger;
         }
 
+        public void AddTrip(Trip newTrip)
+        {
+            _context.Add(newTrip);
+        }
 
         public IEnumerable<Trip> GetAllTrips()
         {
@@ -45,6 +49,11 @@ namespace TheWorld.Models
                 _logger.LogError("Could not get trips with stops form database", ex);
                 return null;
             }
+        }
+
+        public bool SaveAll()
+        {
+            return _context.SaveChanges() > 0;
         }
     }
 }

@@ -42,9 +42,13 @@ namespace TheWorld.Controllers.Api
 
                     //Save to the Datbase
                     _logger.LogInformation("Attemting to save a new trip");
+                    _repository.AddTrip(newTrip);
 
-                    Response.StatusCode = (int)HttpStatusCode.Created;
-                    return Json(Mapper.Map<TripViewModel>(newTrip));
+                    if (_repository.SaveAll())
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.Created;
+                        return Json(Mapper.Map<TripViewModel>(newTrip));
+                    }
                 }
             }
             catch (Exception ex)
