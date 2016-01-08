@@ -48,3 +48,5 @@ Temporary Items
 
 # Personal ignore
 *.suo
+src/TheWorld/node_modules/
+src/TheWorld/wwwroot/lib/_app/
